@@ -7,6 +7,7 @@ import { Input } from '../components/ui/input'
 import { Textarea } from '../components/ui/textarea'
 import { Label } from '../components/ui/label'
 import { Upload } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Contact() {
   const ref = useRef<HTMLDivElement>(null)
@@ -90,7 +91,7 @@ export default function Contact() {
               <div className="grid grid-cols-3 gap-4 mt-4">
                 {selectedFiles.map((file, index) => (
                   <div key={index} className="relative">
-                    <img
+                    <Image
                       src={URL.createObjectURL(file)} // Generar URL temporal para la vista previa
                       alt={`preview-${index}`}
                       className="w-full h-32 object-cover rounded-md"
