@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
+//import { Button } from '@/components/ui/button';
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
