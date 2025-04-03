@@ -92,12 +92,6 @@ export default function Hero() {
           <h1 className="text-5xl md:text-7xl font-bold">
             <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
               Pgas
-            </span>{' '}
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Pgas
-            </span>{' '}
-            <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-              Pgas
             </span>
           </h1>
           <motion.p
@@ -106,20 +100,14 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-400"
           >
-            En Pgas hacemos Pegas
+            En PGAS hacemos Pegas 💪<br></br>
+            Soluciones tecnológicas con personalidad
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Button
-              type="submit"
-              size="lg"
-              className="w-full bg-gradient-to-r from-emerald-400 to-cyan-400 text-gray-900 font-bold hover:from-emerald-500 hover:to-cyan-500"
-            >
-              Contactanos
-            </Button>
           </motion.div>
         </div>
       </motion.div>

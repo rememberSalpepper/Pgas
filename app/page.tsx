@@ -8,6 +8,7 @@ import Services from '@/components/services'
 import About from '@/components/about'
 import Contact from '@/components/contact'
 import Footer from '@/components/footer'
+import CallToAction from '@/components/callToAction'
 
 const ParticlesBackground = dynamic(() => import('@/components/particles-background'), { ssr: false })
 

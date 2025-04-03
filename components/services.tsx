@@ -7,20 +7,20 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../co
 
 const services = [
   {
-    title: 'Software',
-    description: 'Desarrollo de software robusto y escalable para negocios modernos.',
+    title: '💻 Software',
+    description: 'Nada de código rebuscado o promesas en binario 🤖 Solo soluciones que realmente te sirven, sin necesidad de usar Google Translate para entendernos.',
     icon: Code,
     gradient: 'from-emerald-400 to-cyan-400',
   },
   {
-    title: 'Diseño',
-    description: 'Soluciones creativas en diseño gráfico y experiencias de usuario.',
+    title: '🎨 Diseño',
+    description: 'Convertimos ideas en diseños que hacen wow. Tu marca merece verse tan bien como el trabajo que haces 💅 Desde logos con onda hasta interfaces que no dan ganas de cerrar.',
     icon: Palette,
     gradient: 'from-cyan-400 to-blue-500',
   },
   {
-    title: 'Marketing',
-    description: 'Estrategias efectivas de marketing digital para el crecimiento de tu negocio.',
+    title: '📢 Marketing',
+    description: 'Estrategias digitales que hacen clic (literal y figuradamente). 🖱️✨ Nos enfocamos en conectar con tu público, no en marearte con tecnicismos.',
     icon: Megaphone,
     gradient: 'from-blue-500 to-cyan-400',
   },
@@ -36,7 +36,7 @@ export default function Services() {
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '-20%'])
 
   return (
-    <section id="services" ref={ref} className="py-20 overflow-hidden bg-gray-900">
+    <section id="services" ref={ref} className="section-offset py-20 overflow-hidden bg-gray-900">
       <motion.div className="container mx-auto px-6" style={{ y }}>
         {/* Título y subtítulo */}
         <motion.div
@@ -46,10 +46,13 @@ export default function Services() {
           viewport={{ once: true }}
           className="text-center mb-16 max-w-3xl mx-auto" // Centrado con margen a izquierda y derecha
         >
-          <h2 className="text-4xl font-bold mb-4">Nuestros Servicios</h2>
+          <h2 className="text-4xl font-bold mb-4">🚀 Nuestros Servicios</h2>
           <p className="text-gray-400 leading-relaxed">
-            Descubre las soluciones innovadoras que ofrecemos en software, diseño y marketing, creadas
-            para potenciar tu negocio y alcanzar tus metas.
+            Ofrecemos soluciones creativas en software, diseño y marketing. <br></br>
+            Somos pequeños en tamaño pero grandes en resultados 💪
+          </p>
+          <p>
+            
           </p>
         </motion.div>
 

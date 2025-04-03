@@ -33,7 +33,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" ref={ref} className="py-20 bg-gray-900 overflow-hidden">
+    <section id="contact" ref={ref} className="py-20 bg-gray-900 overflow-hidden section-offset">
       <motion.div className="container mx-auto px-6" style={{ y }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -44,7 +44,7 @@ export default function Contact() {
         >
           <h2 className="text-4xl font-bold mb-4">Ponte En Contacto</h2>
           <p className="text-gray-400">
-            RAAAAAAAAAAAAAAAAA!
+            ¿Listo para dar el siguiente paso? 👣 <br />Nosotros también. ¡Conversemos sobre cómo podemos ayudarte! 🚀
           </p>
         </motion.div>
         <motion.div
@@ -66,7 +66,7 @@ export default function Contact() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="file-upload" className="block text-sm font-medium text-gray-400">
-                Agrega imagenes (Opcional)
+                Agrega imagenes
               </Label>
               <div className="flex items-center space-x-2">
                 <Input

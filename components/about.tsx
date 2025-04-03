@@ -14,7 +14,7 @@ export default function About() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"])
 
   return (
-    <section id="about" ref={ref} className="py-20 overflow-hidden">
+    <section id="about" ref={ref} className="section-offset py-20 overflow-hidden">
       <motion.div className="container mx-auto px-4 md:px-6" style={{ y }}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Textos */}
@@ -27,14 +27,19 @@ export default function About() {
           >
             <h2 className="text-4xl font-bold mb-6">Sobre Nosotros</h2>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Somos una empresa dedicada a brindar soluciones innovadoras en software, marketing y diseño.
+              Un equipo pequeño pero poderoso.
             </p>
+            <p> 
+              Hacemos marketing, diseño y software a medida 🧠💻🎨. Combinamos innovación con pragmatismo porque sabemos que lo que importa al final... son los resultados (y que no se caiga la web, claro 😅).
+            </p>
+            <br></br>
+
             <div className="grid grid-cols-2 gap-6">
               {[
-                { number: '250+', label: 'Proyectos Completados' },
-                { number: '100+', label: 'Clientes Felices' },
-                { number: '10+', label: 'Años de Experiencia' },
-                { number: '5', label: 'Oficinas Globales' },
+                { number: '💯%', label: 'Tasa de éxito (Aún no tenemos muchos clientes, Pero 100% es 100%) 👍' },
+                { number: '15+', label: 'Clientes Felices (Y no, no todos son familia) 🙃' },
+                { number: '5+', label: 'Años de Experiencia (Cada uno en lo suyo) 📚' },
+                { number: '24/7', label: 'Disponibilidad (No es que no tengamos vida social...) 📱' },
               ].map((stat) => (
                 <motion.div
                   key={stat.label}
