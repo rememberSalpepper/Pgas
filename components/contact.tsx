@@ -2,6 +2,8 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef, useState } from 'react'
+import emailjs from 'emailjs-com'
+import { toast } from 'sonner'
 import { Button } from '../components/ui/button'
 import { Input } from '../components/ui/input'
 import { Textarea } from '../components/ui/textarea'
@@ -10,30 +12,66 @@ import { Upload } from 'lucide-react'
 import Image from 'next/image'
 
 export default function Contact() {
-  const ref = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const form = useRef<HTMLFormElement>(null)
   const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
+    target: sectionRef,
+    offset: ['start end', 'end start']
   })
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '-20%'])
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"])
-
-  // Estado para almacenar las imágenes seleccionadas
-  const [selectedFiles, setSelectedFiles] = useState<File[]>([])
+  const [previewImage, setPreviewImage] = useState<string | null>(null)
+  const [sending, setSending] = useState(false)
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files) {
-      const filesArray = Array.from(event.target.files) // Convertimos FileList a Array
-      setSelectedFiles((prev) => [...prev, ...filesArray]) // Agregamos las nuevas imágenes al estado
+    const file = event.target.files?.[0]
+    if (!file) return
+
+    if (file.size > 1024 * 1024) {
+      toast.error('La imagen no debe superar 1MB.')
+      event.target.value = ''
+      return
     }
+
+    setPreviewImage(URL.createObjectURL(file))
   }
 
-  const handleRemoveImage = (index: number) => {
-    setSelectedFiles((prev) => prev.filter((_, i) => i !== index)) // Removemos la imagen seleccionada
+  const handleRemoveImage = () => {
+    setPreviewImage(null)
+    const input = document.getElementById('file-upload') as HTMLInputElement
+    if (input) input.value = ''
+  }
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (!form.current) return
+
+    setSending(true)
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
+      .then(
+        (result) => {
+          console.log('✅ Enviado:', result.text)
+          toast.success('¡Gracias por tu mensaje! Te responderemos pronto. ✅')
+          form.current?.reset()
+          setPreviewImage(null)
+        },
+        (error) => {
+          console.error('❌ Error:', error.text)
+          toast.error('Ups... hubo un error al enviar. Por favor, intentá más tarde.')
+        }
+      )
+      .finally(() => setSending(false))
   }
 
   return (
-    <section id="contact" ref={ref} className="py-20 bg-gray-900 overflow-hidden section-offset">
+    <section id="contact" ref={sectionRef} className="py-20 bg-gray-900 overflow-hidden section-offset">
       <motion.div className="container mx-auto px-6" style={{ y }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,6 +85,7 @@ export default function Contact() {
             Nosotros también. ¡Conversemos sobre cómo podemos ayudarte! 🚀
           </p>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,26 +93,46 @@ export default function Contact() {
           viewport={{ once: true }}
           className="max-w-2xl mx-auto"
         >
-          <form className="space-y-6">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="space-y-6"
+            encType="multipart/form-data"
+          >
             <div className="grid md:grid-cols-2 gap-6">
-              <Input type="text" placeholder="Nombre" className="bg-gray-800 border-gray-700 w-full" />
-              <Input type="email" placeholder="Email" className="bg-gray-800 border-gray-700 w-full" />
+              <Input
+                type="text"
+                name="user_name"
+                placeholder="Nombre"
+                required
+                className="bg-gray-800 border-gray-700 w-full"
+              />
+              <Input
+                type="email"
+                name="user_email"
+                placeholder="Email"
+                required
+                className="bg-gray-800 border-gray-700 w-full"
+              />
               <Textarea
+                name="message"
                 placeholder="Mensaje"
                 rows={6}
+                required
                 className="bg-gray-800 border-gray-700 w-full col-span-2"
               />
             </div>
+
             <div className="space-y-2">
               <Label htmlFor="file-upload" className="block text-sm font-medium text-gray-400">
-                Agrega imagenes
+                Agrega una imagen (opcional)
               </Label>
               <div className="flex items-center space-x-2">
                 <Input
                   id="file-upload"
+                  name="attachment"
                   type="file"
                   accept="image/*"
-                  multiple // Permitir selección múltiple
                   onChange={handleFileChange}
                   className="hidden"
                 />
@@ -84,35 +143,39 @@ export default function Contact() {
                   className="bg-gray-800 border-gray-700 hover:bg-gray-700"
                 >
                   <Upload className="w-4 h-4 mr-2" />
-                  Elegir Archivos
+                  Elegir Archivo
                 </Button>
               </div>
-              {/* Vista previa de las imágenes */}
-              <div className="grid grid-cols-3 gap-4 mt-4">
-                {selectedFiles.map((file, index) => (
-                  <div key={index} className="relative">
+
+              {previewImage && (
+                <div className="grid grid-cols-1 gap-4 mt-4">
+                  <div className="relative">
                     <Image
-                      src={URL.createObjectURL(file)} // Generar URL temporal para la vista previa
-                      alt={`preview-${index}`}
+                      src={previewImage}
+                      alt="preview"
                       className="w-full h-32 object-cover rounded-md"
+                      width={128}
+                      height={128}
                     />
                     <button
                       type="button"
-                      onClick={() => handleRemoveImage(index)}
+                      onClick={handleRemoveImage}
                       className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 text-xs"
                     >
                       ✕
                     </button>
                   </div>
-                ))}
-              </div>
+                </div>
+              )}
             </div>
+
             <Button
               type="submit"
               size="lg"
+              disabled={sending}
               className="w-full bg-gradient-to-r from-emerald-400 to-cyan-400 text-gray-900 font-bold hover:from-emerald-500 hover:to-cyan-500"
             >
-              Contactanos
+              {sending ? 'Enviando...' : 'Contactanos'}
             </Button>
           </form>
         </motion.div>
