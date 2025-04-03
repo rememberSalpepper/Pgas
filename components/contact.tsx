@@ -42,9 +42,9 @@ export default function Contact() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4">Ponte En Contacto</h2>
+          <h2 className="text-4xl font-bold mb-4">¿Listo para dar el siguiente paso? 👣</h2>
           <p className="text-gray-400">
-            ¿Listo para dar el siguiente paso? 👣 <br />Nosotros también. ¡Conversemos sobre cómo podemos ayudarte! 🚀
+            Nosotros también. ¡Conversemos sobre cómo podemos ayudarte! 🚀
           </p>
         </motion.div>
         <motion.div

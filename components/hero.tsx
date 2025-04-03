@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
 export default function Hero() {
@@ -88,12 +89,14 @@ export default function Hero() {
         className="relative z-10 h-full flex items-center justify-center"
         style={{ y }}
       >
-        <div className="text-center space-y-8 max-w-4xl mx-auto px-6">
-          <h1 className="text-5xl md:text-7xl font-bold">
-            <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-              Pgas
-            </span>
-          </h1>
+        <div className="text-center space-y-0 max-w-4xl mx-auto px-6">
+          <Image
+            src="/PgasTexto.png"
+            alt="Pgas Logo"
+            width={250}
+            height={250}
+            className="rounded-full mx-auto"
+            />
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

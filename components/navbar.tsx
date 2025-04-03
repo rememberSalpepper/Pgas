@@ -40,9 +40,13 @@ export default function Navbar() {
               height={60}
               className="rounded-full"
             />
-            <span className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-              PGAS
-            </span>
+            <Image
+              src="/PgasTexto.png"
+              alt="Pgas Logo"
+              width={60}
+              height={60}
+              className="rounded-full"
+            />
           </Link>
 
           {/* Navegación desktop */}
