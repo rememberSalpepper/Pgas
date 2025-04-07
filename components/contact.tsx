@@ -7,9 +7,6 @@ import { toast } from 'sonner'
 import { Button } from '../components/ui/button'
 import { Input } from '../components/ui/input'
 import { Textarea } from '../components/ui/textarea'
-import { Label } from '../components/ui/label'
-import { Upload } from 'lucide-react'
-import Image from 'next/image'
 
 export default function Contact() {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -20,27 +17,7 @@ export default function Contact() {
   })
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '-20%'])
 
-  const [previewImage, setPreviewImage] = useState<string | null>(null)
   const [sending, setSending] = useState(false)
-
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]
-    if (!file) return
-
-    if (file.size > 1024 * 1024) {
-      toast.error('La imagen no debe superar 1MB.')
-      event.target.value = ''
-      return
-    }
-
-    setPreviewImage(URL.createObjectURL(file))
-  }
-
-  const handleRemoveImage = () => {
-    setPreviewImage(null)
-    const input = document.getElementById('file-upload') as HTMLInputElement
-    if (input) input.value = ''
-  }
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -60,7 +37,6 @@ export default function Contact() {
           console.log('✅ Enviado:', result.text)
           toast.success('¡Gracias por tu mensaje! Te responderemos pronto. ✅')
           form.current?.reset()
-          setPreviewImage(null)
         },
         (error) => {
           console.error('❌ Error:', error.text)
@@ -97,7 +73,6 @@ export default function Contact() {
             ref={form}
             onSubmit={sendEmail}
             className="space-y-6"
-            encType="multipart/form-data"
           >
             <div className="grid md:grid-cols-2 gap-6">
               <Input
@@ -121,52 +96,6 @@ export default function Contact() {
                 required
                 className="bg-gray-800 border-gray-700 w-full col-span-2"
               />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="file-upload" className="block text-sm font-medium text-gray-400">
-                Agrega una imagen (opcional)
-              </Label>
-              <div className="flex items-center space-x-2">
-                <Input
-                  id="file-upload"
-                  name="attachment"
-                  type="file"
-                  accept="image/*"
-                  onChange={handleFileChange}
-                  className="hidden"
-                />
-                <Button
-                  type="button"
-                  variant="outline"
-                  onClick={() => document.getElementById('file-upload')?.click()}
-                  className="bg-gray-800 border-gray-700 hover:bg-gray-700"
-                >
-                  <Upload className="w-4 h-4 mr-2" />
-                  Elegir Archivo
-                </Button>
-              </div>
-
-              {previewImage && (
-                <div className="grid grid-cols-1 gap-4 mt-4">
-                  <div className="relative">
-                    <Image
-                      src={previewImage}
-                      alt="preview"
-                      className="w-full h-32 object-cover rounded-md"
-                      width={128}
-                      height={128}
-                    />
-                    <button
-                      type="button"
-                      onClick={handleRemoveImage}
-                      className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 text-xs"
-                    >
-                      ✕
-                    </button>
-                  </div>
-                </div>
-              )}
             </div>
 
             <Button
