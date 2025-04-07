@@ -104,7 +104,6 @@ export default function Hero() {
             className="text-xl md:text-2xl text-gray-400"
           >
             En PGAS hacemos Pegas 💪<br></br>
-            Soluciones tecnológicas con personalidad
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
