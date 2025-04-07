@@ -26,19 +26,16 @@ export default function About() {
             className="ml-6 md:ml-12"
           >
             <h2 className="text-4xl font-bold mb-6">Sobre Nosotros</h2>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Un equipo pequeño pero poderoso.
-            </p>
             <p> 
-              Hacemos marketing, diseño y software a medida 🧠💻🎨. Combinamos innovación con pragmatismo porque sabemos que lo que importa al final... son los resultados (y que no se caiga la web, claro 😅).
+              Hacemos marketing, diseño y software a medida 🧠💻🎨. Combinamos innovación con pragmatismo porque sabemos que lo que importa al final son los resultados (y que no se caiga la web, claro 😅).
             </p>
             <br></br>
 
             <div className="grid grid-cols-2 gap-6">
               {[
-                { number: '💯%', label: 'Tasa de éxito (Aún no tenemos muchos clientes, Pero 100% es 100%) 👍' },
-                { number: '15+', label: 'Clientes Felices (Y no, no todos son familia) 🙃' },
-                { number: '5+', label: 'Años de Experiencia (Cada uno en lo suyo) 📚' },
+                { number: '100%', label: 'Tasa de éxito (Y creciendo...) 👍' },
+                { number: '15+', label: 'Clientes Felices (Y no, nuestras mamas no cuentan) 🙃' },
+                { number: '5+', label: 'Años de Experiencia 📚' },
                 { number: '24/7', label: 'Disponibilidad (No es que no tengamos vida social...) 📱' },
               ].map((stat) => (
                 <motion.div
