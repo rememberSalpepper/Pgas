@@ -63,12 +63,12 @@ export default function Navbar() {
               className="relative group"
             >
               <a
-                href="https://frontend-551745267811.us-central1.run.app/"
+                href="https://pgas.online/pgapps/boletas"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors"
               >
-                Boletas
+                PgApps
                 <motion.div
                   className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 origin-left"
                   initial={{ scaleX: 0 }}
