@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../co
 const services = [
   {
     title: '💻 Software',
-    description: 'Nada de código rebuscado o promesas en binario 🤖 Solo soluciones que realmente te sirven, sin necesidad de usar Google Translate para entendernos.',
+    description: 'Nada de código rebuscado o promesas en binario 🤖 Solo soluciones que realmente te sirven, sin necesidad de usar un traductor para entendernos.',
     icon: Code,
     gradient: 'from-emerald-400 to-cyan-400',
   },
