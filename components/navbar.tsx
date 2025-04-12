@@ -61,7 +61,7 @@ export default function Navbar() {
               href="/ruta-destino"  // Reemplaza "/ruta-destino" por la ruta que necesites
               className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors"
             >
-              Nuevo Botón
+              Boletas
             </Link>
           </div>
 
