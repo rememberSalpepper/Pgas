@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../co
 const services = [
   {
     title: '💻 Software',
-    description: 'Nada de código rebuscado o promesas en binario 🤖 Solo soluciones que realmente te sirven, sin necesidad de usar un traductor para entendernos.',
+    description: 'Nada de código rebuscado 🤖 Solo soluciones que realmente te sirven, sin necesidad de usar un traductor para entendernos.',
     icon: Code,
     gradient: 'from-emerald-400 to-cyan-400',
   },
@@ -20,7 +20,7 @@ const services = [
   },
   {
     title: '📢 Marketing',
-    description: 'Estrategias digitales que hacen clic (literal y figuradamente). 🖱️✨ Nos enfocamos en conectar con tu público, no en marearte con tecnicismos.',
+    description: 'Estrategias digitales que hacen clic. 🖱️✨ Nos enfocamos en conectar con tu público, no en marearte con tecnicismos.',
     icon: Megaphone,
     gradient: 'from-blue-500 to-cyan-400',
   },
@@ -48,8 +48,7 @@ export default function Services() {
         >
           <h2 className="text-4xl font-bold mb-4">🚀 Nuestros Servicios</h2>
           <p className="text-gray-400 leading-relaxed">
-            Ofrecemos soluciones creativas en software, diseño y marketing. <br></br>
-            Somos pequeños en tamaño pero grandes en resultados 💪
+            Ofrecemos soluciones creativas en software, diseño y marketing.
           </p>
           <p>
             

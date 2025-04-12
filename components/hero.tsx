@@ -103,8 +103,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-400"
           >
-            En PGAS hacemos Pegas 💪<br></br>
-            Soluciones tecnológicas con personalidad
+            En PGAS hacemos Pegas 💪
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
