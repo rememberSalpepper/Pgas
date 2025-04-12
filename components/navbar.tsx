@@ -17,7 +17,7 @@ export default function Navbar() {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  // Elementos de navegación actualizados
+  // Elementos de navegación
   const navItems = [
     { label: 'Servicios', target: 'services' },
     { label: 'Nosotros', target: 'about' },
@@ -42,7 +42,7 @@ export default function Navbar() {
             />
             <Image
               src="/PgasTexto.png"
-              alt="Pgas Logo"
+              alt="Pgas Texto Logo"
               width={60}
               height={60}
               className="rounded-full"
@@ -50,19 +50,33 @@ export default function Navbar() {
           </Link>
 
           {/* Navegación desktop */}
-          <div className="hidden md:flex space-x-8">
+          {/* Se agregó "items-center" para alinear verticalmente todos los elementos */}
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <NavItem key={item.target} href={`#${item.target}`}>
                 {item.label}
               </NavItem>
             ))}
-            {/* Botón adicional solo para desktop */}
-            <Link
-              href="/https://frontend-551745267811.us-central1.run.app/"  // Reemplaza "/ruta-destino" por la ruta que necesites
-              className="text-white py-2 px-4 transition-colors"
+            {/* Botón "Boletas" solo para desktop */}
+            <motion.div
+              whileHover={{ y: -2 }}
+              className="relative group"
             >
-              Boletas
-            </Link>
+              <a
+                href="https://frontend-551745267811.us-central1.run.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                Boletas
+                <motion.div
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 origin-left"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </a>
+            </motion.div>
           </div>
 
           {/* Menú móvil */}
@@ -109,16 +123,16 @@ function NavItem({
 }) {
   return (
     <motion.div 
-      whileHover={{ y: mobile ? 0 : -2 }} 
+      whileHover={{ y: mobile ? 0 : -2 }}
       className={`relative group ${mobile ? 'w-full' : ''}`}
     >
       <Link
         href={href}
         onClick={onClick}
         className={`
-          ${mobile ? 
-            'block px-4 py-3 text-lg hover:bg-gray-800 rounded-lg' : 
-            'text-gray-300 hover:text-white transition-colors'
+          ${mobile 
+            ? 'block px-4 py-3 text-lg hover:bg-gray-800 rounded-lg' 
+            : 'text-gray-300 hover:text-white transition-colors'
           }
         `}
       >
