@@ -58,8 +58,8 @@ export default function Navbar() {
             ))}
             {/* Botón adicional solo para desktop */}
             <Link
-              href="/ruta-destino"  // Reemplaza "/ruta-destino" por la ruta que necesites
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors"
+              href="/https://frontend-551745267811.us-central1.run.app/"  // Reemplaza "/ruta-destino" por la ruta que necesites
+              className="text-white py-2 px-4 transition-colors"
             >
               Boletas
             </Link>
