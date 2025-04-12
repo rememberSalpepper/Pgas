@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/apps/(.*)",
+        "destination": "https://frontend-551745267811.us-central1.run.app/$1"
+      }
+    ]
+  }
+  

@@ -14,7 +14,7 @@ const services = [
   },
   {
     title: '🎨 Diseño',
-    description: 'Convertimos ideas en diseños que hacen wow. Tu marca merece verse tan bien como el trabajo que haces 💅 Desde logos con onda hasta interfaces que no dan ganas de cerrar.',
+    description: 'Convertimos ideas en diseños que hacen wow. Tu marca merece verse tan bien como el trabajo que haces. 💅',
     icon: Palette,
     gradient: 'from-cyan-400 to-blue-500',
   },

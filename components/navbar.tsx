@@ -56,6 +56,13 @@ export default function Navbar() {
                 {item.label}
               </NavItem>
             ))}
+            {/* Botón adicional solo para desktop */}
+            <Link
+              href="/ruta-destino"  // Reemplaza "/ruta-destino" por la ruta que necesites
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors"
+            >
+              Nuevo Botón
+            </Link>
           </div>
 
           {/* Menú móvil */}
