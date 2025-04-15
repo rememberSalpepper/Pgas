@@ -330,6 +330,13 @@ export default function Services() {
                           {service.cta}
                         </Button>
                         </motion.div>
+                        <Button
+                          variant="ghost"
+                          onClick={handleCloseModal}
+                          className="w-full mt-4 text-gray-400 hover:text-white block lg:hidden"
+                        >
+                          Cerrar
+                        </Button>
                       </div>
                     </div>
                   </div>
