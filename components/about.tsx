@@ -27,19 +27,16 @@ export default function About() {
           >
             <h2 className="text-4xl font-bold mb-6">Sobre Nosotros</h2>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Un equipo pequeño pero poderoso.
-            </p>
-            <p> 
-              Hacemos marketing, diseño y software a medida 🧠💻🎨. Combinamos innovación con pragmatismo porque sabemos que lo que importa al final... son los resultados (y que no se caiga la web, claro 😅).
+            Hacemos marketing, diseño y software a medida 🧠💻🎨. Mezclamos creatividad con practicidad, porque lo que importa al final son los resultados (y que la web no se caiga, obvio 😅).
             </p>
             <br></br>
 
             <div className="grid grid-cols-2 gap-6">
               {[
-                { number: '💯%', label: 'Tasa de éxito (Aún no tenemos muchos clientes, Pero 100% es 100%) 👍' },
-                { number: '15+', label: 'Clientes Felices (Y no, no todos son familia) 🙃' },
-                { number: '5+', label: 'Años de Experiencia (Cada uno en lo suyo) 📚' },
-                { number: '24/7', label: 'Disponibilidad (No es que no tengamos vida social...) 📱' },
+                { number: '100%', label: 'Tasa de éxito (Todavía somos pocos, pero 100% es 100%) 👍' },
+                { number: '15+', label: 'Clientes felices (Y no, nuestras mamás no cuentan) 🙃' },
+                { number: '5+', label: 'Años de Experiencia combinada (sí, contamos todo lo que suma) 📚' },
+                { number: '24/7', label: 'Siempre disponibles (No es que no tengamos vida social...) 📱' },
               ].map((stat) => (
                 <motion.div
                   key={stat.label}

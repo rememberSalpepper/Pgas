@@ -68,7 +68,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors"
               >
-                PgApps
+                PGApps
                 <motion.div
                   className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 origin-left"
                   initial={{ scaleX: 0 }}
