@@ -123,51 +123,7 @@ export default function Contact() {
               />
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="file-upload" className="block text-sm font-medium text-gray-400">
-                Agrega una imagen (opcional)
-              </Label>
-              <div className="flex items-center space-x-2">
-                <Input
-                  id="file-upload"
-                  name="attachment"
-                  type="file"
-                  accept="image/*"
-                  onChange={handleFileChange}
-                  className="hidden"
-                />
-                <Button
-                  type="button"
-                  variant="outline"
-                  onClick={() => document.getElementById('file-upload')?.click()}
-                  className="bg-gray-800 border-gray-700 hover:bg-gray-700"
-                >
-                  <Upload className="w-4 h-4 mr-2" />
-                  Elegir Archivo
-                </Button>
-              </div>
-
-              {previewImage && (
-                <div className="grid grid-cols-1 gap-4 mt-4">
-                  <div className="relative">
-                    <Image
-                      src={previewImage}
-                      alt="preview"
-                      className="w-full h-32 object-cover rounded-md"
-                      width={128}
-                      height={128}
-                    />
-                    <button
-                      type="button"
-                      onClick={handleRemoveImage}
-                      className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 text-xs"
-                    >
-                      ✕
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
+            
 
             <Button
               type="submit"
