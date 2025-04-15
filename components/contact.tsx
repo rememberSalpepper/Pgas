@@ -7,9 +7,9 @@ import { toast } from 'sonner'
 import { Button } from '../components/ui/button'
 import { Input } from '../components/ui/input'
 import { Textarea } from '../components/ui/textarea'
-import { Label } from '../components/ui/label'
-import { Upload } from 'lucide-react'
-import Image from 'next/image'
+//import { Label } from '../components/ui/label'
+//import { Upload } from 'lucide-react'
+//import Image from 'next/image'
 
 export default function Contact() {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -20,27 +20,27 @@ export default function Contact() {
   })
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '-20%'])
 
-  const [previewImage, setPreviewImage] = useState<string | null>(null)
+  const [ setPreviewImage] = useState<string | null>(null)
   const [sending, setSending] = useState(false)
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]
-    if (!file) return
+//  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+//    const file = event.target.files?.[0]
+//    if (!file) return
 
-    if (file.size > 1024 * 1024) {
-      toast.error('La imagen no debe superar 1MB.')
-      event.target.value = ''
-      return
-    }
+//    if (file.size > 1024 * 1024) {
+//      toast.error('La imagen no debe superar 1MB.')
+//      event.target.value = ''
+//      return
+//    }
 
-    setPreviewImage(URL.createObjectURL(file))
-  }
+//    setPreviewImage(URL.createObjectURL(file))
+//  }
 
-  const handleRemoveImage = () => {
-    setPreviewImage(null)
-    const input = document.getElementById('file-upload') as HTMLInputElement
-    if (input) input.value = ''
-  }
+//  const handleRemoveImage = () => {
+//    setPreviewImage(null)
+//    const input = document.getElementById('file-upload') as HTMLInputElement
+//    if (input) input.value = ''
+//  }
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -60,7 +60,7 @@ export default function Contact() {
           console.log('✅ Enviado:', result.text)
           toast.success('¡Gracias por tu mensaje! Te responderemos pronto. ✅')
           form.current?.reset()
-          setPreviewImage(null)
+          //setPreviewImage(null)
         },
         (error) => {
           console.error('❌ Error:', error.text)
