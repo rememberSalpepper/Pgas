@@ -232,7 +232,7 @@ export default function Services() {
           {services.map((service, index) => (
             <Dialog key={`modal-${service.title}`} open={openModal === service.title} onOpenChange={handleCloseModal}>
               <DialogContent
-                className="bg-gray-800 border-none text-white max-w-[90%] sm:max-w-md md:max-w-xl overflow-hidden p-4 sm:p-6"
+                className="bg-gray-800 border-none text-white max-w-[90%] sm:max-w-md md:max-w-xl max-h-[85vh] overflow-y-auto p-4 sm:p-6"
                 onInteractOutside={handleCloseModal}
               >
                 <style jsx global>{`
