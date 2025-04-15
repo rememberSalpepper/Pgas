@@ -20,7 +20,7 @@ export default function Contact() {
   })
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '-20%'])
 
-  const [ setPreviewImage] = useState<string | null>(null)
+  //const [ setPreviewImage] = useState<string | null>(null)
   const [sending, setSending] = useState(false)
 
 //  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
