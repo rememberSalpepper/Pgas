@@ -1,12 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/pgapps/boletas{/}?(:path((?!_next).*)?)",
-      "destination": "https://frontend-551745267811.us-central1.run.app/pgapps/boletas:path*"
-    },
-     {
-      "source": "/pgapps/boletas/_next/:path*",
-      "destination": "https://frontend-551745267811.us-central1.run.app/pgapps/boletas/_next/:path*"
+      "source": "/pgapps/boletas/:path*",
+      "destination": "https://frontend-551745267811.us-central1.run.app/:path*"
     }
   ]
 }
