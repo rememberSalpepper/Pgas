@@ -3,6 +3,10 @@
     {
       "source": "/pgapps/boletas/:path*",
       "destination": "https://frontend-551745267811.us-central1.run.app/:path*"
+    },
+    {
+      "source": "/pgapps/boletas",
+      "destination": "https://frontend-551745267811.us-central1.run.app"
     }
   ]
 }
