@@ -23,15 +23,23 @@
     },
     {
       "source": "/pgapps/charts/_next/:path*",
-      "destination": "https://charts-trading-view-xyz.vercel.app/_next/:path*"
+      "destination": "https://charts-trading-view.vercel.app/_next/:path*"
+    },
+    {
+      "source": "/pgapps/charts/images/:path*",
+      "destination": "https://charts-trading-view.vercel.app/images/:path*"
+    },
+    {
+      "source": "/pgapps/charts/api/:path*",
+      "destination": "https://charts-trading-view.vercel.app/api/:path*"
     },
     {
       "source": "/pgapps/charts/:path*",
-      "destination": "https://charts-trading-view-xyz.vercel.app/:path*"
+      "destination": "https://charts-trading-view.vercel.app/:path*"
     },
     {
       "source": "/pgapps/charts",
-      "destination": "https://charts-trading-view-xyz.vercel.app"
+      "destination": "https://charts-trading-view.vercel.app"
     }
   ]
 }
