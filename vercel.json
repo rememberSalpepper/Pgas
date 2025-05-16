@@ -27,8 +27,20 @@
       "destination": "https://charts-trading-view.vercel.app/favicon.ico"
     },
     {
+      "source": "/favicon.svg",
+      "destination": "https://charts-trading-view.vercel.app/favicon.svg"
+    },
+    {
       "source": "/logo.svg",
       "destination": "https://charts-trading-view.vercel.app/logo.svg"
+    },
+    {
+      "source": "/apple-touch-icon.png",
+      "destination": "https://charts-trading-view.vercel.app/apple-touch-icon.png"
+    },
+    {
+      "source": "/site.webmanifest",
+      "destination": "https://charts-trading-view.vercel.app/site.webmanifest"
     },
     {
       "source": "/pgapps/charts/_next/:path*",
